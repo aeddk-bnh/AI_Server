@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.profiles/
+.auth/
+playwright-artifacts/
+test-results/
+playwright-report/

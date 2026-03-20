@@ -1,0 +1,33 @@
+{
+  "name": "openai-compatible-ai-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenAI-compatible server skeleton backed by AI_API_Library-compatible adapters",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup:ai-library": "npm --prefix ../AI_API_Library install",
+    "build:ai-library": "npm --prefix ../AI_API_Library run build",
+    "prepare:gemini-web": "npm run setup:ai-library && npm run build:ai-library",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "build:all": "npm run build:ai-library && npm run build",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:ai-library": "npm --prefix ../AI_API_Library run typecheck",
+    "typecheck:all": "npm run typecheck && npm run typecheck:ai-library"
+  },
+  "dependencies": {
+    "dotenv": "17.3.1",
+    "fastify": "5.8.2",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

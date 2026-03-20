@@ -1,0 +1,40 @@
+{
+  "name": "gemini-web-playwright",
+  "version": "0.1.0",
+  "description": "Library for automating Gemini web with Playwright",
+  "license": "MIT",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/src/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:integration": "playwright test",
+    "smoke": "npm run build && node dist/examples/basic-send.js",
+    "chat": "npm run build && node dist/examples/chat-cli.js",
+    "bootstrap:login": "npm run build && node dist/examples/bootstrap-login.js",
+    "auth:save": "npm run build && node dist/examples/save-auth-state.js",
+    "inspect:dom": "npm run build && node dist/examples/inspect-dom.js"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}

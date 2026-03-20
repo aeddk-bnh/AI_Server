@@ -1,0 +1,29 @@
+{
+  "defaultModel": "gpt-5.2",
+  "models": [
+    {
+      "id": "gpt-5.2",
+      "label": "GPT-5.2",
+      "description": "Local runtime alias routed to the currently available Gemini fast mode.",
+      "ownedBy": "ai-server",
+      "backendProvider": "gemini-web",
+      "backendModel": "fast",
+      "supportsStream": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "enabled": true
+    },
+    {
+      "id": "gpt-5.2-mini",
+      "label": "GPT-5.2 Mini",
+      "description": "Secondary alias also routed to Gemini fast mode for the current guest session.",
+      "ownedBy": "ai-server",
+      "backendProvider": "gemini-web",
+      "backendModel": "fast",
+      "supportsStream": true,
+      "supportsVision": false,
+      "supportsTools": false,
+      "enabled": true
+    }
+  ]
+}
